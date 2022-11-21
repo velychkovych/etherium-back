@@ -14,6 +14,7 @@ module.exports = (Transaction) => {
 
 	async function findOne() {
 		const transaction = await Transaction.findOne({});
+		if (!transaction) return null;
 		return formatTransaction(transaction);
 	}
 

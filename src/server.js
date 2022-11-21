@@ -1,4 +1,5 @@
 const express = require('express');
+const config = require('./config');
 const jobs = require('./jobs');
 
 const transactionController = require('./controllers/transaction-controller');
@@ -9,6 +10,6 @@ app.use('/api/v1/transactions', transactionController);
 
 jobs.forEach((job) => job.run());
 
-app.listen(3000, () => {
-	console.log('App listen on port 3000');
+app.listen(config.port, () => {
+	console.log(`App listen on port ${config.port}`);
 });

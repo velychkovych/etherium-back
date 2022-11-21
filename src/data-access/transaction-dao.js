@@ -26,7 +26,6 @@ module.exports = (Transaction) => {
 
 	async function findManyWithFilters({ limit, skip, findBy, value }) {
 		const findOptions = findBy ? { [findBy]: value } : {};
-		console.log(findOptions);
 		const transactions = await Transaction.find(findOptions)
 			.sort({ blockNumber: -1 })
 			.skip(skip)

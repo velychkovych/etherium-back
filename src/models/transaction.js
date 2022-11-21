@@ -9,7 +9,7 @@ module.exports = (mongoose) => {
 		transactionFee: Number,
 	});
 
-	const Transaction = mongoose.model('Transations', transactionSchema);
+	const Transaction = mongoose.model('Transactions', transactionSchema);
 
 	return Transaction;
 };
